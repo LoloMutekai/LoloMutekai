@@ -1,0 +1,51 @@
+# 床の間 — regenerate the hand-made metrics SVG and commit it if it changed.
+# Sovereign: no third-party action renders the card; only our own script reads the
+# API with a fine-grained read-only PAT (secret METRICS_TOKEN).
+name: metrics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "metrics/**"
+      - ".github/workflows/metrics.yml"
+  schedule:
+    - cron: "17 4 * * *" # daily, 04:17 UTC (off-peak)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write # only to commit the regenerated SVG back to this repo
+
+concurrency:
+  group: metrics
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Generate metrics SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        run: python3 metrics/generate.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- assets/metrics.svg; then
+            echo "metrics.svg unchanged — nothing to commit."
+            exit 0
+          fi
+          git add assets/metrics.svg
+          git commit -m "chore(profile): refresh metrics card [skip ci]"
+          git push

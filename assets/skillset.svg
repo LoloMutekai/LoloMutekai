@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" fill="none" role="img" aria-label="strata — skill substrate · LoloMutekai">
+<defs>
+  <style>
+    .lbl   { font-family:'Courier New',Courier,monospace; font-size:12px;  fill:#8a93a6; letter-spacing:1.4px; }
+    .lbl-t { font-family:'Courier New',Courier,monospace; font-size:12px;  fill:#c98ba0; letter-spacing:1.4px; }
+    .lbl-c { font-family:'Courier New',Courier,monospace; font-size:12px;  fill:#7fb8c8; letter-spacing:1.4px; }
+    .t0    { font-family:'Courier New',Courier,monospace; font-size:16px; fill:#8a93a6; }
+    .tell  { font-family:'Courier New',Courier,monospace; font-size:16px; fill:#c98ba0; }
+    .cyan  { font-family:'Courier New',Courier,monospace; font-size:16px; fill:#7fb8c8; }
+    .mut   { font-family:'Courier New',Courier,monospace; font-size:16px; fill:#8a93a6; opacity:.45; }
+    .µ     { font-family:'Courier New',Courier,monospace; font-size:10px;  fill:#8a93a6; fill-opacity:.45; letter-spacing:.8px; }
+    .µc    { font-family:'Courier New',Courier,monospace; font-size:10px;  fill:#7fb8c8; fill-opacity:.42; letter-spacing:.8px; }
+    .µr    { font-family:'Courier New',Courier,monospace; font-size:10px;  fill:#c98ba0; fill-opacity:.55; letter-spacing:.8px; }
+    .hud   { font-family:'Courier New',Courier,monospace; font-size:10px;  fill:#8a93a6; letter-spacing:2px; }
+    .ann   { font-family:'Courier New',Courier,monospace; font-size:10.5px; fill:#c98ba0; fill-opacity:.60; }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────────── */
+    @keyframes strate-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes line-draw {
+      from { stroke-dashoffset: 1000; opacity: 0; }
+      to   { stroke-dashoffset: 0;    opacity: 1; }
+    }
+    @keyframes breathe {
+      0%,100% { opacity: 1; }
+      50%     { opacity: .55; }
+    }
+    @keyframes hud-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── STRATE 1 ── */
+    .s1 { animation: strate-in .55s cubic-bezier(0.22,1,0.36,1) 0.10s both; }
+    .s1-t1 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.20s both; }
+    .s1-t2 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.24s both; }
+    .s1-t3 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.28s both; }
+    .s1-t4 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.32s both; }
+    .s1-t5 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.36s both; }
+    .s1-t6 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.40s both; }
+    .line-s1 { stroke-dasharray: 1000; animation: line-draw .5s ease-out 0.48s both; }
+
+    /* ── STRATE 2 ── */
+    .s2 { animation: strate-in .55s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+    .s2-t1 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.62s both; }
+    .s2-t2 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.66s both; }
+    .s2-t3 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.70s both; }
+    .s2-t4 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.74s both; }
+    .s2-t5 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.78s both; }
+    .s2-ann { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 0.88s both; }
+    .s2-accent {
+      animation:
+        strate-in .55s cubic-bezier(0.22,1,0.36,1) 0.55s both,
+        breathe 3.5s ease-in-out 1.3s infinite;
+    }
+    .line-s2 { stroke-dasharray: 1000; animation: line-draw .5s ease-out 0.95s both; }
+
+    /* ── STRATE 3 ── */
+    .s3 { animation: strate-in .55s cubic-bezier(0.22,1,0.36,1) 1.00s both; }
+    .s3-t1 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.08s both; }
+    .s3-t2 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.12s both; }
+    .s3-t3 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.16s both; }
+    .s3-t4 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.20s both; }
+    .s3-t5 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.24s both; }
+    .s3-t6 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.28s both; }
+    .s3-t7 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.32s both; }
+    .s3-t8 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.36s both; }
+    .line-s3 { stroke-dasharray: 1000; animation: line-draw .5s ease-out 1.45s both; }
+
+    /* ── STRATE 4 ── */
+    .s4 { animation: strate-in .55s cubic-bezier(0.22,1,0.36,1) 1.48s both; }
+    .s4-t1 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.55s both; }
+    .s4-t2 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.60s both; }
+    .s4-t3 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.65s both; }
+    .line-s4 { stroke-dasharray: 1000; animation: line-draw .5s ease-out 1.72s both; }
+
+    /* ── STRATE 5 ── */
+    .s5 { animation: strate-in .55s cubic-bezier(0.22,1,0.36,1) 1.75s both; }
+    .s5-t1 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.83s both; }
+    .s5-t2 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.87s both; }
+    .s5-t3 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.91s both; }
+    .s5-t4 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.95s both; }
+    .s5-t5 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 1.99s both; }
+    .s5-t6 { animation: strate-in .45s cubic-bezier(0.22,1,0.36,1) 2.03s both; }
+    .line-s5 { stroke-dasharray: 1000; animation: line-draw .5s ease-out 2.15s both; }
+
+    .hud-frame { animation: hud-in .6s ease-out 0.05s both; }
+    .baseline  { animation: hud-in .5s ease-out 2.20s both; }
+    .deco      { animation: hud-in .8s ease-out 2.00s both; }
+  </style>
+
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"  stop-color="#0d0e12"/>
+    <stop offset="1"  stop-color="#0f1019"/>
+  </linearGradient>
+  <!-- halo transparent aux bords -->
+  <radialGradient id="halobg" cx="500" cy="220" r="480" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#0d0e12" stop-opacity="1"/>
+    <stop offset="62%"  stop-color="#0d0e12" stop-opacity="1"/>
+    <stop offset="78%"  stop-color="#0d0e12" stop-opacity=".65"/>
+    <stop offset="90%"  stop-color="#0d0e12" stop-opacity=".25"/>
+    <stop offset="100%" stop-color="#0d0e12" stop-opacity="0"/>
+  </radialGradient>
+  <!-- mask cadre 4 bords -->
+  <linearGradient id="st-fade-left" x1="0" y1="0" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="white" stop-opacity="0"/>
+    <stop offset="1" stop-color="white" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="st-fade-right" x1="970" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="white" stop-opacity="1"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="st-fade-top" x1="0" y1="0" x2="0" y2="40" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="white" stop-opacity="0"/>
+    <stop offset="1" stop-color="white" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="st-fade-bottom" x1="0" y1="400" x2="0" y2="440" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="white" stop-opacity="1"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="edge-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="440">
+    <rect x="30" y="40" width="940" height="360" fill="white"/>
+    <rect x="0"   y="0" width="30"   height="440" fill="url(#st-fade-left)"/>
+    <rect x="970" y="0" width="30"   height="440" fill="url(#st-fade-right)"/>
+    <rect x="0"   y="0" width="1000" height="40"  fill="url(#st-fade-top)"/>
+    <rect x="0" y="400" width="1000" height="40"  fill="url(#st-fade-bottom)"/>
+  </mask>
+  <linearGradient id="alt-fill" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0"   stop-color="#1c1820" stop-opacity=".55"/>
+    <stop offset=".6"  stop-color="#18151e" stop-opacity=".35"/>
+    <stop offset="1"   stop-color="#0d0e12" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="tell-band" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0"   stop-color="#c98ba0" stop-opacity=".1"/>
+    <stop offset=".5"  stop-color="#c98ba0" stop-opacity=".04"/>
+    <stop offset="1"   stop-color="#c98ba0" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="cyan-band" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0"   stop-color="#7fb8c8" stop-opacity=".08"/>
+    <stop offset=".5"  stop-color="#7fb8c8" stop-opacity=".03"/>
+    <stop offset="1"   stop-color="#7fb8c8" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".7">
+    <stop offset=".55" stop-color="#0d0e12" stop-opacity="0"/>
+    <stop offset="1"   stop-color="#0d0e12" stop-opacity=".45"/>
+  </radialGradient>
+</defs>
+
+<!-- fond halo transparent aux bords -->
+<rect width="1000" height="440" fill="url(#halobg)" mask="url(#edge-fade)"/>
+
+<g mask="url(#edge-fade)">
+
+<!-- ── COINS HUD ── -->
+<g class="hud-frame">
+  <polyline points="12,30 12,12 30,12"    stroke="#2a2730" stroke-width=".85" fill="none"/>
+  <polyline points="970,30 970,12 952,12" stroke="#2a2730" stroke-width=".85" fill="none"/>
+  <polyline points="12,410 12,428 30,428" stroke="#2a2730" stroke-width=".85" fill="none"/>
+  <polyline points="970,410 970,428 952,428" stroke="#2a2730" stroke-width=".85" fill="none"/>
+  <text x="34"  y="20"  class="µ">SKILL.STRATA</text>
+  <text x="700" y="20"  class="µc">KAIRO / SUBSTRATE · v1</text>
+  <text x="34"  y="432" class="µ">床の間</text>
+  <text x="820" y="432" class="µ">LOLOMUTEKAI · 2026</text>
+  <text x="500" y="32"  text-anchor="middle" class="hud">A R C H I T E C T U R E · D E S · C O U C H E S</text>
+  <!-- séparateur colonne labels -->
+  <line x1="148" y1="50" x2="148" y2="400" stroke="#2a2730" stroke-width=".65"/>
+  <!-- ticks latéraux -->
+  <line x1="144" y1="124" x2="148" y2="124" stroke="#5a6070"  stroke-width=".7" opacity=".6"/>
+  <line x1="144" y1="200" x2="148" y2="200" stroke="#c98ba0"  stroke-width=".9" opacity=".7"/>
+  <line x1="144" y1="284" x2="148" y2="284" stroke="#5a6070"  stroke-width=".7" opacity=".5"/>
+  <line x1="144" y1="348" x2="148" y2="348" stroke="#7fb8c8"  stroke-width=".7" opacity=".55"/>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     STRATE 1 — substrate / languages    y=50..124
+══════════════════════════════════════════════════════════════════ -->
+<g class="s1">
+  <rect x="0" y="50" width="1000" height="74" fill="url(#alt-fill)"/>
+  <line x1="0" y1="50" x2="1000" y2="50" stroke="#2a2730" stroke-width=".7"/>
+  <text x="136" y="82"  text-anchor="end" class="lbl">// substrate</text>
+  <text x="136" y="100" text-anchor="end" font-family="serif" font-size="11" fill="#8a93a6" opacity=".45">言語</text>
+  <text x="880" y="72"  class="µ">LAYER_0</text>
+  <text x="880" y="84"  class="µ">languages</text>
+</g>
+<text x="166" y="90"  class="tell s1-t1">Python</text>
+<text x="251" y="90"  class="mut s1-t1">·</text>
+<text x="265" y="90"  class="t0 s1-t2">TypeScript</text>
+<text x="397" y="90"  class="mut s1-t2">·</text>
+<text x="411" y="90"  class="t0 s1-t3">JavaScript</text>
+<text x="539" y="90"  class="mut s1-t3">·</text>
+<text x="553" y="90"  class="t0 s1-t4">C++</text>
+<text x="597" y="90"  class="mut s1-t4">·</text>
+<text x="611" y="90"  class="t0 s1-t5">Lua</text>
+<text x="648" y="90"  class="mut s1-t5">·</text>
+<text x="662" y="90"  class="t0 s1-t6">Shell / Bash</text>
+<line x1="0" y1="124" x2="1000" y2="124" class="line-s1" stroke="#2a2730" stroke-width=".7"/>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     STRATE 2 — cognition / ML   y=124..200
+══════════════════════════════════════════════════════════════════ -->
+<g class="s2">
+  <rect x="0"   y="124" width="1000" height="76" fill="url(#tell-band)"/>
+  <text x="136" y="152" text-anchor="end" class="lbl-t">// cognition</text>
+  <text x="136" y="170" text-anchor="end" font-family="serif" font-size="11" fill="#c98ba0" opacity=".55">認知</text>
+  <text x="880" y="140" class="µr">LAYER_1</text>
+  <text x="880" y="152" class="µr">ml · vectors</text>
+</g>
+<rect x="0" y="124" width="2.5" height="76" fill="#c98ba0" fill-opacity=".45" class="s2-accent"/>
+<text x="166" y="156" class="tell s2-t1">sentence-transformers</text>
+<text x="417" y="156" class="mut s2-t1">·</text>
+<text x="431" y="156" class="t0 s2-t2">FAISS</text>
+<text x="502" y="156" class="mut s2-t2">·</text>
+<text x="516" y="156" class="t0 s2-t3">NumPy</text>
+<text x="601" y="156" class="mut s2-t3">·</text>
+<text x="615" y="156" class="t0 s2-t4">SQLite</text>
+<text x="700" y="156" class="mut s2-t4">·</text>
+<text x="714" y="156" class="t0 s2-t5">pytest</text>
+<text x="166" y="178" class="ann s2-ann">hand-rolled · vector search · embeddings · no heavy framework</text>
+<line x1="0" y1="200" x2="1000" y2="200" class="line-s2" stroke="#c98ba0" stroke-width=".5" opacity=".28"/>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     STRATE 3 — vessels / web-saas   y=200..284
+══════════════════════════════════════════════════════════════════ -->
+<g class="s3">
+  <rect x="0" y="200" width="1000" height="84" fill="url(#alt-fill)"/>
+  <line x1="0" y1="200" x2="1000" y2="200" stroke="#2a2730" stroke-width=".6"/>
+  <text x="136" y="230" text-anchor="end" class="lbl">// vessels</text>
+  <text x="136" y="248" text-anchor="end" font-family="serif" font-size="11" fill="#8a93a6" opacity=".45">器</text>
+  <text x="880" y="220" class="µ">LAYER_2</text>
+  <text x="880" y="232" class="µ">web · saas</text>
+</g>
+<text x="166" y="236" class="tell s3-t1">Next.js</text>
+<text x="247" y="236" class="mut s3-t1">·</text>
+<text x="261" y="236" class="t0 s3-t2">React</text>
+<text x="320" y="236" class="mut s3-t2">·</text>
+<text x="334" y="236" class="t0 s3-t3">React Native</text>
+<text x="472" y="236" class="mut s3-t3">·</text>
+<text x="486" y="236" class="t0 s3-t4">Supabase</text>
+<text x="594" y="236" class="mut s3-t4">·</text>
+<text x="608" y="236" class="t0 s3-t5">Stripe</text>
+<text x="166" y="260" class="t0 s3-t6">Tailwind</text>
+<text x="264" y="260" class="mut s3-t6">·</text>
+<text x="278" y="260" class="t0 s3-t7">Zod</text>
+<text x="318" y="260" class="mut s3-t7">·</text>
+<text x="332" y="260" class="t0 s3-t8">Vitest</text>
+<line x1="0" y1="284" x2="1000" y2="284" class="line-s3" stroke="#2a2730" stroke-width=".7"/>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     STRATE 4 — worlds / game-3D   y=284..348
+══════════════════════════════════════════════════════════════════ -->
+<g class="s4">
+  <rect x="0" y="284" width="1000" height="64" fill="#151218" fill-opacity=".5"/>
+  <text x="136" y="312" text-anchor="end" class="lbl-c">// worlds</text>
+  <text x="136" y="330" text-anchor="end" font-family="serif" font-size="11" fill="#7fb8c8" opacity=".42">世界</text>
+  <text x="880" y="302" class="µc">LAYER_3</text>
+  <text x="880" y="314" class="µc">game · 3d</text>
+</g>
+<text x="166" y="320" class="cyan s4-t1">Unreal Engine 5</text>
+<text x="344" y="320" class="mut s4-t1">·</text>
+<text x="358" y="320" class="t0 s4-t2">Blender</text>
+<text x="166" y="338" class="µc s4-t3" style="font-size:10.5px;fill-opacity:.55">C++ · GAS · Niagara · PCG · python tooling</text>
+<line x1="0" y1="348" x2="1000" y2="348" class="line-s4" stroke="#2a2730" stroke-width=".7"/>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     STRATE 5 — ground / systems   y=348..400
+══════════════════════════════════════════════════════════════════ -->
+<g class="s5">
+  <rect x="0"  y="348" width="1000" height="52" fill="url(#cyan-band)"/>
+  <text x="136" y="370" text-anchor="end" class="lbl-c">// ground</text>
+  <text x="136" y="386" text-anchor="end" font-family="serif" font-size="11" fill="#7fb8c8" opacity=".38">地</text>
+  <text x="880" y="362" class="µc">LAYER_4</text>
+  <text x="880" y="374" class="µc">systems · env</text>
+</g>
+<rect x="0" y="348" width="2.5" height="52" fill="#7fb8c8" fill-opacity=".32" class="s5"/>
+<text x="166" y="378" class="cyan s5-t1">Arch Linux</text>
+<text x="277" y="378" class="mut s5-t1">·</text>
+<text x="291" y="378" class="t0 s5-t2">bspwm</text>
+<text x="358" y="378" class="mut s5-t2" style="opacity:.3">/</text>
+<text x="372" y="378" class="t0 s5-t3">Hyprland</text>
+<text x="470" y="378" class="mut s5-t3">·</text>
+<text x="484" y="378" class="t0 s5-t4">Neovim</text>
+<text x="566" y="378" class="mut s5-t4">·</text>
+<text x="580" y="378" class="t0 s5-t5">GNU stow</text>
+<text x="680" y="378" class="mut s5-t5">·</text>
+<text x="694" y="378" class="t0 s5-t6">bash</text>
+<line x1="0" y1="400" x2="1000" y2="400" class="line-s5" stroke="#2a2730" stroke-width=".7"/>
+
+<!-- ── FILETS DÉCORATIFS ── -->
+<g class="deco">
+  <path d="M 890 60 Q 930 96 945 160 Q 958 200 928 244" stroke="#2a2730" stroke-width=".6" fill="none" opacity=".4"/>
+  <path d="M 908 266 Q 945 296 952 340 Q 954 364 938 385" stroke="#5a6070" stroke-width=".5" fill="none" opacity=".16"/>
+  <path d="M 50 62 Q 28 118 42 192 Q 56 244 32 300" stroke="#2a2730" stroke-width=".6" fill="none" opacity=".35"/>
+  <path d="M 62 268 Q 46 314 58 354" stroke="#5a6070" stroke-width=".5" fill="none" opacity=".16"/>
+  <path d="M 148 158 Q 260 150 420 158 Q 550 165 690 156" stroke="#c98ba0" stroke-width=".5" fill="none" opacity=".18"/>
+  <path d="M 148 370 Q 280 364 460 372 Q 600 378 750 368" stroke="#7fb8c8" stroke-width=".5" fill="none" opacity=".14"/>
+</g>
+
+<!-- ── VIGNETTE ── -->
+<rect width="1000" height="440" fill="url(#vig)" pointer-events="none"/>
+
+<!-- baseline -->
+<text x="500" y="424" text-anchor="middle" class="µ baseline" style="fill-opacity:.45">cognitive sovereignty · architect · 2026</text>
+
+</g>
+</svg>
