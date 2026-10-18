@@ -58,8 +58,10 @@ says where the model stops and the real system begins.
 
 ### Before this
 
-At 16, still in high school, I was discussing market regimes and order flow
-with people running quant trading projects, and got invited into a quant
-trading group.
+At 16, still in high school, I was sending books and study material on market
+regimes and order flow to people running quant trading projects, helping them
+work through it, and got invited into their quant trading group. (If you want
+my notes or the free resources I used, ask me and I'll send them. That kind of
+knowledge should be free.)
 
 <p align="center"><sub>床の間</sub></p>
