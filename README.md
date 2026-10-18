@@ -25,18 +25,18 @@ on broken code, before I rely on it.
 
 **A green job that published nothing.** My profile workflow generated one file,
 committed another and still reported success.
-[Write-up](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/05-green-job.md).
+[Write-up](https://github.com/LoloMutekai/kairo/blob/main/notes/05-green-job.md).
 
 Each bug gets a file in the repo: cause, fix, what to check first next time.
 27 so far.
 
 ### Something you can run
 
-The agents stay private. The [notebook](https://github.com/LoloMutekai/kairo-alcove)
+The agents stay private. The [notebook](https://github.com/LoloMutekai/kairo)
 has a small model of the parts I can share, standard library only:
 
 ```console
-$ git clone https://github.com/LoloMutekai/kairo-alcove && cd kairo-alcove
+$ git clone https://github.com/LoloMutekai/kairo && cd kairo
 $ python3 reference/check.py | grep -E 'reachable|"status"'
   "reachable_states": 40,
   "status": "PASS",
@@ -45,12 +45,12 @@ $ python3 reference/check.py --variant leaky > /dev/null; echo $?
 ```
 
 The leaky variant is supposed to fail. If it ever passes, the checker is broken.
-[The evidence note](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/04-evidence.md)
+[The evidence note](https://github.com/LoloMutekai/kairo/blob/main/notes/04-evidence.md)
 says where the model stops and the real system begins.
 
 ### Kairo
 
-- **A.C.C.E.S.S.** — the agents. Private; [notebook](https://github.com/LoloMutekai/kairo-alcove) and [showcase](https://lolomutekai.github.io/kairo-alcove/).
+- **A.C.C.E.S.S.** — the agents. Private; [notebook](https://github.com/LoloMutekai/kairo) and [showcase](https://lolomutekai.github.io/kairo/).
 - **[Sayna](https://www.sayna.app/)** — a patient app and dashboard for aesthetic clinics: bookings, loyalty, memberships.
 - **Unicorn** — finding collaborators by what they've built rather than their title. In progress.
 - **Maestrale** — a long-term military sim in Unreal Engine.

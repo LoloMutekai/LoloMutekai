@@ -2,7 +2,7 @@
 
 Text is converted to paths so the banner looks the same on every machine:
 GitHub serves README SVGs as images, which cannot load web fonts. The terminal
-lines are copied from a real run of kairo-alcove/reference/check.py; rerun it
+lines are copied from a real run of kairo/reference/check.py; rerun it
 and update TERMINAL if the checker's output changes.
 
     python3 tools/header.py --fonts /usr/share/fonts
@@ -144,7 +144,7 @@ def build(theme: dict[str, str], faces: dict[str, Face]) -> str:
     out.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" rx="14" fill="{theme["card"]}" '
                f'stroke="{theme["card_edge"]}"/>')
     out.append(f'<line x1="{cx}" y1="{cy + 34}" x2="{cx + cw}" y2="{cy + 34}" stroke="{theme["card_edge"]}"/>')
-    title, _ = faces["mono"].paths("~/kairo-alcove", cx + 46, cy + 23, 13, theme["muted"])
+    title, _ = faces["mono"].paths("~/kairo", cx + 46, cy + 23, 13, theme["muted"])
     out += [bow(cx + 24, cy + 17, 0.55, theme["rose"]), title]
     line_y = cy + 66
     for prompt, spans in TERMINAL:
