@@ -1,57 +1,64 @@
-<p align="center">
-  <a href="https://lolomutekai.github.io/kairo-alcove/"><img src="./assets/profile-header.svg" alt="Open Kairo — Lolo's selected work, dark ink, dusty rose, and a small bow" width="100%"></a>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/header-light.svg">
+  <img src="./assets/header-dark.svg" alt="Lolo, in dusty rose italic with a small bow. Beside it, a terminal runs the public notebook's checker: 40 reachable states, PASS; the deliberately leaky variant FAILs." width="100%">
+</picture>
 
-# Lolo ♡
+I'm Lolo. I build **Kairo**, my own little corner of software, and most of my
+nights go into **A.C.C.E.S.S.**: a handful of AI agents that live on my laptop,
+each with its own private memory, talking to each other without waiting for an
+answer. None of them can touch the real world without my written yes.
 
-[Explore Kairo ↗](https://lolomutekai.github.io/kairo-alcove/) · [Read the technical notebook](https://github.com/LoloMutekai/kairo-alcove)
+I don't write most of the code by hand. Claude and Codex do, in parallel
+sessions, and a separate reviewer session has to sign off before anything is
+merged. My part is deciding what gets built, what counts as done, and saying
+no. Every decision I make goes into a dated file, word for word (50 of them as
+of October 2026), so nobody, me included, can quietly rewrite what was agreed.
 
-I build **A.C.C.E.S.S.**, a personal AI system with state that persists between
-conversations. My current interests are private state, explicit sharing and
-the gap between an event being produced and its effect being observed.
+### Things that went wrong
 
-## How I work
+**Green tests, no wire.** Two agents disagreed 632 times. The arbitration
+module ruled on every single conflict and both test suites passed, but the
+ruling was never written back where the agents read it. Since then, a module
+isn't done until one real request has gone through it end to end.
 
-AI is part of my workflow: exploration, implementation and review. I keep
-project-specific learning journals, bug write-ups and verification notes to
-build my own understanding and keep the work explainable. I take responsibility
-for what I publish.
+**Checks that never bite.** In August an audit of my repo found that 58 of my
+158 guards had never once been seen failing. Now a new guard has to go red on
+purpose, on broken code, before I trust it.
 
-## Work you can examine
+**A green job that published nothing.** My own profile workflow generated one
+file and committed another, and reported success. [The write-up](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/05-green-job.md)
+has the source, the run and why the fix alone wouldn't prove anything.
 
-The [public notebook](https://github.com/LoloMutekai/kairo-alcove) contains an
-independent reference model, mathematical arguments and runnable checks:
+Each bug gets a file next to the code: cause, fix, what to check first next
+time. 27 so far, most of them embarrassing.
 
-- **Isolation:** compare executions that differ in private state.
-- **Delivery:** state the fairness assumption and exhibit starvation without it.
-- **Stability:** separate initial-state error from accumulated input error.
+### Something you can run
 
-The private implementation and the public model are separate artifacts.
-Each note states its assumptions, evidence and limits.
+The agents stay private. The [notebook](https://github.com/LoloMutekai/kairo-alcove)
+has a small model of the parts I can share, standard library only:
 
-## A little background
+```console
+$ git clone https://github.com/LoloMutekai/kairo-alcove && cd kairo-alcove
+$ python3 reference/check.py | grep -E 'reachable|"status"'
+  "reachable_states": 40,
+  "status": "PASS",
+$ python3 reference/check.py --variant leaky > /dev/null; echo $?
+1
+```
 
-At 16, while still in secondary school, I was discussing market regimes,
-order flow and multi-strategy approaches with people working on quantitative
-trading projects, and was invited to join a quant trading group.
+The leaky variant is there to fail. If it ever passes, the checker is broken.
+[The last note](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/04-evidence.md)
+says where the model stops and the real system begins.
 
-## The Kairo collection
+### Kairo
 
-| Project | What you can inspect |
-| --- | --- |
-| [A.C.C.E.S.S. notebook](https://github.com/LoloMutekai/kairo-alcove) | Formal notes, executable specification and counterexamples. |
-| [Sayna](https://www.sayna.app/) | A clinic-branded patient app and management dashboard for aesthetic clinics. |
-| Unicorn | Collaborator discovery through skills and projects; in development. |
-| Maestrale | A long-term military simulation ambition in Unreal Engine. |
-| Tokonoma & the residence | A personal interface language and an interactive spatial desktop on Arch Linux, under construction. |
+- **A.C.C.E.S.S.** — the agents. Private on purpose; [notebook](https://github.com/LoloMutekai/kairo-alcove) and [showcase](https://lolomutekai.github.io/kairo-alcove/).
+- **[Sayna](https://www.sayna.app/)** — a patient app and dashboard for aesthetic clinics: bookings, loyalty, memberships.
+- **Unicorn** — finding collaborators by what they've built rather than their title. In progress.
+- **Maestrale** — a very long-term military sim in Unreal Engine.
+- **Tokonoma** — my Arch Linux desktop, and a 3D residence I'm slowly furnishing.
 
-The [interactive Kairo showcase](https://lolomutekai.github.io/kairo-alcove/)
-brings these projects together, with product introductions, a layered sculpture
-and a floral background that responds to the pointer.
+I like my interfaces the way I like my outfits: dark, precise, a little pink,
+and there's always a bow somewhere ♡
 
-I also care about the place software lives: dark ink, dusty rose, small ribbons
-and kawaii interfaces. The same palette runs through the notebook.
-
----
-
-<p align="center"><sub>床の間 · persistent systems, personal software, a little pink ♡</sub></p>
+<p align="center"><sub>床の間 · tokonoma, the alcove where you put the one thing you want people to look at</sub></p>
