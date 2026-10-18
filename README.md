@@ -3,34 +3,32 @@
   <img src="./assets/header-dark.svg" alt="Lolo, in dusty rose italic with a small bow. Beside it, a terminal runs the public notebook's checker: 40 reachable states, PASS; the deliberately leaky variant FAILs." width="100%">
 </picture>
 
-I'm Lolo. I build **Kairo**, my own little corner of software, and most of my
-nights go into **A.C.C.E.S.S.**: a handful of AI agents that live on my laptop,
-each with its own private memory, talking to each other without waiting for an
-answer. None of them can touch the real world without my written yes.
+I'm Lolo. Most of my time goes into **A.C.C.E.S.S.**: a few AI agents that run
+on my laptop, each with its own private memory, talking to each other
+asynchronously. They can't do anything in the real world without my written OK.
 
-I don't write most of the code by hand. Claude and Codex do, in parallel
-sessions, and a separate reviewer session has to sign off before anything is
-merged. My part is deciding what gets built, what counts as done, and saying
-no. Every decision I make goes into a dated file, word for word (50 of them as
-of October 2026), so nobody, me included, can quietly rewrite what was agreed.
+Claude and Codex write most of the code, in parallel sessions, and a separate
+review session has to approve before anything is merged. I decide what gets
+built, what counts as done and what gets rejected. Every decision goes into a
+dated file, word for word (50 as of October 2026).
 
 ### Things that went wrong
 
 **Green tests, no wire.** Two agents disagreed 632 times. The arbitration
-module ruled on every single conflict and both test suites passed, but the
-ruling was never written back where the agents read it. Since then, a module
-isn't done until one real request has gone through it end to end.
+module ruled on every conflict and both test suites passed, but the ruling was
+never written back where the agents read it. Since then a module only counts as
+done once a real request has gone through it end to end.
 
-**Checks that never bite.** In August an audit of my repo found that 58 of my
-158 guards had never once been seen failing. Now a new guard has to go red on
-purpose, on broken code, before I trust it.
+**Guards that never failed.** In August an audit found that 58 of the repo's
+158 guards had never been seen failing. A new guard now has to fail on purpose,
+on broken code, before I rely on it.
 
-**A green job that published nothing.** My own profile workflow generated one
-file and committed another, and reported success. [The write-up](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/05-green-job.md)
-has the source, the run and why the fix alone wouldn't prove anything.
+**A green job that published nothing.** My profile workflow generated one file,
+committed another and still reported success.
+[Write-up](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/05-green-job.md).
 
-Each bug gets a file next to the code: cause, fix, what to check first next
-time. 27 so far, most of them embarrassing.
+Each bug gets a file in the repo: cause, fix, what to check first next time.
+27 so far.
 
 ### Something you can run
 
@@ -46,19 +44,22 @@ $ python3 reference/check.py --variant leaky > /dev/null; echo $?
 1
 ```
 
-The leaky variant is there to fail. If it ever passes, the checker is broken.
-[The last note](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/04-evidence.md)
+The leaky variant is supposed to fail. If it ever passes, the checker is broken.
+[The evidence note](https://github.com/LoloMutekai/kairo-alcove/blob/main/notes/04-evidence.md)
 says where the model stops and the real system begins.
 
 ### Kairo
 
-- **A.C.C.E.S.S.** — the agents. Private on purpose; [notebook](https://github.com/LoloMutekai/kairo-alcove) and [showcase](https://lolomutekai.github.io/kairo-alcove/).
+- **A.C.C.E.S.S.** — the agents. Private; [notebook](https://github.com/LoloMutekai/kairo-alcove) and [showcase](https://lolomutekai.github.io/kairo-alcove/).
 - **[Sayna](https://www.sayna.app/)** — a patient app and dashboard for aesthetic clinics: bookings, loyalty, memberships.
 - **Unicorn** — finding collaborators by what they've built rather than their title. In progress.
-- **Maestrale** — a very long-term military sim in Unreal Engine.
-- **Tokonoma** — my Arch Linux desktop, and a 3D residence I'm slowly furnishing.
+- **Maestrale** — a long-term military sim in Unreal Engine.
+- **Tokonoma** — my Arch Linux desktop, and a 3D residence I'm building inside it.
 
-I like my interfaces the way I like my outfits: dark, precise, a little pink,
-and there's always a bow somewhere ♡
+### Before this
 
-<p align="center"><sub>床の間 · tokonoma, the alcove where you put the one thing you want people to look at</sub></p>
+At 16, still in high school, I was discussing market regimes and order flow
+with people running quant trading projects, and got invited into a quant
+trading group.
+
+<p align="center"><sub>床の間</sub></p>
