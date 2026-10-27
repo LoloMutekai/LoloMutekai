@@ -12,6 +12,19 @@ review session has to approve before anything is merged. I decide what gets
 built, what counts as done and what gets rejected. Every decision goes into a
 dated file, word for word (50 as of October 2026).
 
+### Kairo Book
+
+A course in mathematics, programming and neuroscience, in English:
+**[read it here](https://lolomutekai.github.io/Kairo-Book/)**.
+
+- 696 units in 139 chapters. Each one has a lesson, a worked example, three
+  exercises with their corrections, and recall questions.
+- Claude and Codex wrote the units; each one had to pass a checker before it
+  went in. Chapters 1 to 3 are left out of this edition.
+- **[My library](https://lolomutekai.github.io/Kairo-Book/library.html)**: the
+  books I own, 236 listed so far, mostly markets, volatility and quant finance.
+  I add more as I sort the rest.
+
 ### Things that went wrong
 
 **Green tests, no wire.** Two agents disagreed 632 times. The arbitration
@@ -60,8 +73,9 @@ says where the model stops and the real system begins.
 
 At 16, still in high school, I was sending books and study material on market
 regimes and order flow to people running quant trading projects, helping them
-work through it, and got invited into their quant trading group. (If you want
-my notes or the free resources I used, ask me and I'll send them. That kind of
-knowledge should be free.)
+work through it, and got invited into their quant trading group. (The books are
+in [my library](https://lolomutekai.github.io/Kairo-Book/library.html). If you
+want my notes or the free resources I used, ask me and I'll send them. That kind
+of knowledge should be free.)
 
 <p align="center"><sub>床の間</sub></p>
