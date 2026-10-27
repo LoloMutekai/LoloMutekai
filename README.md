@@ -22,7 +22,7 @@ A course in mathematics, programming and neuroscience, in English:
 - Claude and Codex wrote the units; each one had to pass a checker before it
   went in. Chapters 1 to 3 are left out of this edition.
 - **[My library](https://lolomutekai.github.io/Kairo-Book/library.html)**: the
-  books I own, 236 listed so far, mostly markets, volatility and quant finance.
+  books I own, 244 listed so far, mostly markets, volatility and quant finance.
   I add more as I sort the rest.
 
 ### Things that went wrong
